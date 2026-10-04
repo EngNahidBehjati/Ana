@@ -1,0 +1,46 @@
+[project]
+name = "ana-api"
+version = "0.1.0"
+description = "Ana backend API"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+  "alembic>=1.14",
+  "fastapi>=0.142.2,<0.143",
+  "psycopg[binary,pool]>=3.2",
+  "pydantic-settings>=2.7",
+  "sqlalchemy[asyncio]>=2.0",
+  "uvicorn[standard]>=0.34",
+]
+
+[dependency-groups]
+dev = [
+  "httpx>=0.28",
+  "pyright>=1.1",
+  "pytest>=8.3",
+  "pytest-asyncio>=0.25",
+  "ruff>=0.9",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ana"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pyright]
+pythonVersion = "3.13"
+typeCheckingMode = "strict"
+include = ["src", "tests"]
