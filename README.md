@@ -12,7 +12,7 @@ backend/frontend scaffolds, database migration baseline, tests, and CI.
 ### Backend
 
 ```bash
-cd apps/api
+cd apps/backend
 uv sync --all-groups
 uv run alembic upgrade head
 uv run uvicorn ana.main:app --reload
