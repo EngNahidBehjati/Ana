@@ -1,0 +1,27 @@
+# Virtual environments
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Test caches
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Build outputs
+build/
+dist/
+*.egg-info/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Editor settings
+.idea/
+.vscode/
